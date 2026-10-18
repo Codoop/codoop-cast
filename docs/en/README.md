@@ -44,6 +44,8 @@ User and maintainer documents are paired across en and zh-cn. Skill instructions
 
 - [Skill naming](30-skill-naming.md)
 
+- [Configured video production](31-production-configuration.md)
+
 ## Maintenance
 
 Update both editions in the same change, preserving commands, IDs, hashes, dates and verification limits. Do not translate LICENSE/NOTICE, schema keys or fixed artifact filenames. Evidence fixtures remain canonical and receive separate English reading editions rather than changed hash-pinned source text. Validate with `python scripts/check_docs.py` from the repository root.

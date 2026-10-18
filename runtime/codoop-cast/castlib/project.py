@@ -2,6 +2,7 @@
 import re
 from pathlib import Path
 
+from .video_config import resolve_video
 from .config import resolve
 from .common import CastError, digest, lock, new_id, read_json, write_json
 
@@ -59,8 +60,9 @@ def initialize(directory, name=None):
         return dict(status='ready', project=str(found), created=False)
     require(not any((p / MARKER).exists() for p in root.parents), 'Do not create a nested content project.')
     root.mkdir(parents=True, exist_ok=True)
+    video = resolve_video(root)['video']
     data = dict(schema_version='0.1.0', kind='cast-project', project_id=new_id(), name=name or root.name,
-                defaults=dict(language=resolve(root)['output_language'], output=dict(width=1080, height=1920, fps=30)),
+                defaults=dict(language=resolve(root)['output_language'], output=dict(**video['resolution'], fps=video['fps'])),
                 current={stage: None for stage in STAGES})
     with lock(root / '.cast', 'project'):
         require(not (root / MARKER).exists(), 'Project was initialized by another process; inspect it before retrying.')

@@ -3,12 +3,112 @@
   "title": "codoop-cast shared configuration",
   "type": "object",
   "properties": {
-    "schema_version": { "const": 1 },
+    "schema_version": {
+      "const": 1
+    },
     "output_language": {
       "type": "string",
       "pattern": "^(auto|[A-Za-z]{2,8}(-[A-Za-z0-9]{1,8})*)$"
+    },
+    "video": {
+      "type": "object",
+      "properties": {
+        "orientation": {
+          "enum": [
+            "portrait",
+            "landscape",
+            "square"
+          ]
+        },
+        "resolution": {
+          "type": "object",
+          "properties": {
+            "width": {
+              "type": "integer",
+              "minimum": 2,
+              "multipleOf": 2
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 2,
+              "multipleOf": 2
+            }
+          },
+          "required": [
+            "width",
+            "height"
+          ],
+          "additionalProperties": false
+        },
+        "fps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "subtitle_style": {
+          "type": "object",
+          "properties": {
+            "font_family": {
+              "type": "string",
+              "minLength": 1
+            },
+            "font_size": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "color": {
+              "type": "string",
+              "minLength": 1
+            },
+            "bottom_margin_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "avatar": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "mode": {
+              "enum": [
+                "placeholder",
+                "media"
+              ]
+            },
+            "x": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "y": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "width": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            },
+            "height": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     }
   },
-  "required": ["schema_version", "output_language"],
+  "required": [
+    "schema_version",
+    "output_language"
+  ],
   "additionalProperties": true
 }

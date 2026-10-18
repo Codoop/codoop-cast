@@ -12,6 +12,16 @@ from castlib.setup import FEATURES, doctor, setup
 from castlib.voice import confirm_voice, create_voice, export_job, list_voices, load_job, generate, run_job
 
 
+def task_video(args):
+    path = getattr(args, 'video_config_file', None)
+    if not path:
+        return None
+    value = read_json(path)
+    if not isinstance(value, dict):
+        raise CastError('invalid_video_config', 'Video preference files must contain a JSON object.')
+    return value
+
+
 def dispatch(args, root):
     if args.command == 'assets':
         from castlib import assets
@@ -22,7 +32,8 @@ def dispatch(args, root):
         return assets.validate(args.assets_file)
     if args.command == 'config':
         from castlib.config import resolve
-        return dict(status='ready', **resolve(args.directory, args.language, root))
+        from castlib.video_config import resolve_video
+        return dict(status='ready', **resolve(args.directory, args.language, root), **resolve_video(args.directory, task_video(args), root))
     if args.command == 'batch':
         from castlib import batch
         if args.action=='create':
@@ -39,7 +50,7 @@ def dispatch(args, root):
     if args.command == 'produce':
         from castlib import produce
         if args.action=='plan':
-            return produce.plan(args.directory,args.target,args.topic,args.force,args.language)
+            return produce.plan(args.directory,args.target,args.topic,args.force,args.language,task_video(args))
         if args.action=='status':
             return produce.status(args.directory,args.run)
         if args.action=='assemble':
@@ -79,7 +90,7 @@ def dispatch(args, root):
         return doctor(root, args.feature)
     if args.command == 'setup':
         from castlib.config import configure
-        configured = configure(args.directory, args.output_language, root)
+        configured = configure(args.directory, args.output_language, root, task_video(args))
         if not args.feature:
             return configured
         response = setup(root, args.feature)
@@ -114,7 +125,7 @@ def dispatch(args, root):
         if args.command=='project':
             return author(root,'index',package=args.package)
         if args.command=='storyboard' and args.action=='prepare':
-            return author(root,'prepare',text_file=args.text_file,script_file=args.script_file,profile_file=args.profile_file,output=args.output,language=args.language)
+            return author(root,'prepare',text_file=args.text_file,script_file=args.script_file,profile_file=args.profile_file,output=args.output,language=args.language,video_config=task_video(args))
         if args.action=='validate':
             return author(root,'validate',package=args.package,phase=args.command)
         if args.action=='compile':
@@ -145,10 +156,12 @@ def main():
     install.add_argument('--feature', choices=list(FEATURES))
     install.add_argument('--directory', help='Optional project or collection configuration scope')
     install.add_argument('--output-language', help='Artifact language: auto or a BCP 47 tag')
+    install.add_argument('--video-config-file', help='JSON video preference patch to save')
     config_parser = commands.add_parser('config')
     config_parser.add_argument('action', choices=['show'])
     config_parser.add_argument('--directory')
     config_parser.add_argument('--language', help='Resolve a current-task override without saving it')
+    config_parser.add_argument('--video-config-file', help='Resolve a video patch without saving it')
     voices = commands.add_parser('voice').add_subparsers(dest='action', required=True)
     voices.add_parser('list')
     create = voices.add_parser('create')
@@ -211,7 +224,9 @@ def main():
                 source=child.add_mutually_exclusive_group(required=True)
                 source.add_argument('--text-file');source.add_argument('--script-file')
                 child.add_argument('--language', help='Concrete language of an imported plain-text script')
-                child.add_argument('--profile-file')
+                settings = child.add_mutually_exclusive_group()
+                settings.add_argument('--profile-file')
+                settings.add_argument('--video-config-file', help='Task video preference patch')
             else:
                 child.add_argument('--package',required=True)
             if action in ('prepare','compile','check','render'):
@@ -243,6 +258,7 @@ def main():
         if action=='plan':
             child.add_argument('--target',choices=list(GRAPH),default='exports')
             child.add_argument('--language', help='Current-task target language')
+            child.add_argument('--video-config-file', help='Task video preference patch')
             child.add_argument('--topic')
             child.add_argument('--force',choices=list(GRAPH),action='append',default=[])
         else:

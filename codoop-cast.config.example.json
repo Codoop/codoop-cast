@@ -1,4 +1,26 @@
 {
   "schema_version": 1,
-  "output_language": "zh-CN"
+  "output_language": "zh-CN",
+  "video": {
+    "orientation": "portrait",
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "subtitle_style": {
+      "font_family": "Microsoft YaHei",
+      "font_size": 48,
+      "color": "#FFFFFF",
+      "bottom_margin_ratio": 0.12
+    },
+    "avatar": {
+      "enabled": true,
+      "mode": "placeholder",
+      "x": 0.78,
+      "y": 0.68,
+      "width": 0.14,
+      "height": 0.105
+    }
+  }
 }

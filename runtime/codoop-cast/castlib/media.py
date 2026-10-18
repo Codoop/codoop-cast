@@ -53,6 +53,7 @@ def call(root,feature,worker,args,kind,request=None):
 
 def author(root,operation,**kwargs):
     request=dict(operation=operation,**{k:str(Path(v).expanduser().resolve()) if k in ('output','package','script_file','text_file','profile_file','report_file','source_file') and v is not None else v for k,v in kwargs.items()})
+    request['data_root'] = str(Path(root).resolve())
     if request.get('package') and not Path(request['package']).is_dir():
         raise CastError('missing_package','Provide a readable local production/authoring directory.')
     if request.get('output') and Path(request['output']).exists():

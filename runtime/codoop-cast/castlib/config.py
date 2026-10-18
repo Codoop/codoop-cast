@@ -1,4 +1,4 @@
-"""Shared artifact-language configuration; independent of model environments."""
+"""Shared production preferences; independent of model environments."""
 import re
 from pathlib import Path
 
@@ -39,7 +39,7 @@ def resolve(directory=None, override=None, data_root=None):
     return dict(output_language=language_tag(legacy) if legacy else 'auto', source='legacy-project' if legacy else 'default')
 
 
-def configure(directory=None, output_language=None, data_root=None):
+def configure(directory=None, output_language=None, data_root=None, video=None):
     """Omitted language preserves existing settings. No environment downloads."""
     from .data_layout import initialize
     initialize(data_root or root_path())
@@ -52,9 +52,13 @@ def configure(directory=None, output_language=None, data_root=None):
         if output_language is not None:
             data['output_language'] = language_tag(output_language)
         elif 'output_language' not in data:
-            data['output_language'] = resolve(directory, data_root=data_root)['output_language']
+            data['output_language'] = resolve(folder, data_root=data_root)['output_language']
+        from .video_config import resolve_video, saved_patch
+        if video is not None:
+            effective = resolve_video(folder, data_root=data_root)['video']
+            data['video'] = saved_patch(data.get('video', {}), video, effective)
         write_json(path, data)
-    return dict(status='ready', config=str(path), **resolve(directory, data_root=data_root))
+    return dict(status='ready', config=str(path), **resolve(folder, data_root=data_root), **resolve_video(folder, data_root=data_root))
 
 
 def speech_language(value):

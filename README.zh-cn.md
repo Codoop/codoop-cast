@@ -71,3 +71,5 @@
 共享运行目录的固定结构、命名、持久数据与缓存边界见 [共享数据目录规范](docs/zh-cn/27-shared-data-layout.md)。setup 按需建立目录并兼容已有数据，doctor 提供只读布局检查。
 
 公开 skill 采用 `codoop-*`，例如 `codoop-setup`、`codoop-research`、`codoop-voice`、`codoop-produce`，与 codoop-flow 的入口风格一致。见[命名与升级兼容](docs/zh-cn/30-skill-naming.md)。
+
+制作视频前读取共享/项目配置中的语言、横竖屏、分辨率、帧率、字幕样式和头像位置，再固定到 output-profile.json；本次要求可单独覆盖，见[制作配置](docs/zh-cn/31-production-configuration.md)。

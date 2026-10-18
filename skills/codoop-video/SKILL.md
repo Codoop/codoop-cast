@@ -5,7 +5,7 @@ description: Compile actual audio alignment and HTML scenes into a synchronized 
 
 # Video
 
-Before producing content, follow the shared [artifact language policy](../codoop-setup/references/language.md). Resolve the configured target language; the English instructions do not imply English deliverables.
+Before producing content, read the shared [production settings](../codoop-setup/references/production-settings.md) for language, aspect, resolution, fps, captions and avatar configuration. Follow the shared [artifact language policy](../codoop-setup/references/language.md). Resolve the configured target language; the English instructions do not imply English deliverables.
 
 Resolve the plugin root two directories above the real location of this SKILL.md, following discovery links. Run `<plugin-root>/scripts/cast.ps1` on Windows (or a compatible Python with `<plugin-root>/runtime/codoop-cast/cast.py`). Global `--root` precedes the command; reuse the user's data root. Never hard-code maintainer paths. Read [execution](references/execution.md) and the applicable JSON schemas in `<plugin-root>/schemas/` before authoring artifacts. Agent performs structured edits; users should not need to edit JSON or install dependencies manually.
 

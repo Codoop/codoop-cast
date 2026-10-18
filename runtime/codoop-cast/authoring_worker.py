@@ -20,7 +20,7 @@ def prepare(request):
             raise ValueError('Expected a script artifact.')
     else:
         from castlib.config import resolve
-        language = resolve(output, request.get('language'))['output_language']
+        language = resolve(output, request.get('language'), request.get('data_root'))['output_language']
         if language == 'auto':
             raise ValueError('Resolve the imported transcript language and pass --language before preparing a storyboard.')
         text=Path(request['text_file']).read_text(encoding='utf-8-sig').strip()
@@ -34,9 +34,10 @@ def prepare(request):
             paragraphs.append(dict(id='p-'+key+'-'+str(seen[key]),display_text=block,spoken_text=block,claim_ids=[]))
         script=dict(schema_version='0.1.0',kind='script',artifact_id=new_id(),revision=1,
                     data=dict(language=language,provenance='Imported user narration; no research provenance inferred.',paragraphs=paragraphs))
-    profile=read_json(request['profile_file']) if request.get('profile_file') else dict(schema_version='0.1.0',kind='output-profile',artifact_id=new_id(),revision=1,
-        data=dict(width=1080,height=1920,fps=30,subtitle_style=dict(font_family='Microsoft YaHei',font_size=48,color='#FFFFFF',bottom_margin_ratio=.12),
-                  avatar=dict(enabled=True,mode='placeholder',x=.78,y=.68,width=.14,height=.105)))
+    from castlib.video_config import resolve_video, profile_data
+    profile=read_json(request['profile_file']) if request.get('profile_file') else dict(
+        schema_version='0.1.0',kind='output-profile',artifact_id=new_id(),revision=1,
+        data=profile_data(resolve_video(output, request.get('video_config'), request.get('data_root'))['video']))
     validate_artifact(profile)
     if profile['kind']!='output-profile':
         raise ValueError('Expected an output-profile artifact.')

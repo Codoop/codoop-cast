@@ -18,3 +18,5 @@ Default data root is the platform user data directory. Pass `CODOOP_CAST_HOME` i
 PowerShell launcher can fetch pinned uv and prepare private Python without an existing Python installation. It requires network on first use; each feature installation separately prepares its declared resources. Quote local paths for the current shell, and prefer subprocess argument arrays over building command strings from user text.
 
 stdout is JSON, stderr and data-root `logs/` contain progress/errors. Read the actual exit code and state. Wait using the host's long-running process support; do not report ready from a download-completed log. Repeated setup reuses a ready feature and installation resources; investigate concrete failures before retrying.
+
+Production format preferences share config.json with output_language. Use setup --video-config-file <patch.json> to save them, config show to inspect effective settings, and the [production settings guide](production-settings.md) for inheritance, task overrides and output-profile handoff. This config-only path requires no new feature environment.

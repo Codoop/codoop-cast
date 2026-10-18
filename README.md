@@ -69,3 +69,5 @@ The agent prepares/reuses media and tracks origin without manual manifests. Inpu
 Models/tools/profiles use private shared storage; content assets/videos stay in projects. [Shared data layout](docs/en/27-shared-data-layout.md) specifies naming, persistence/cache boundaries and versioning. Setup creates needed categories compatibly; doctor inspects them read-only.
 
 Public skills use `codoop-*` entry names, including `codoop-setup`, `codoop-research`, `codoop-voice` and `codoop-produce`. See [naming and upgrade compatibility](docs/en/30-skill-naming.md).
+
+Video production reads shared/project settings for language, orientation, resolution, fps, captions and avatar placement, then pins them in output-profile.json. Task-specific overrides are supported: [production configuration](docs/en/31-production-configuration.md).

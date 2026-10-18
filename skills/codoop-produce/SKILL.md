@@ -5,7 +5,7 @@ description: Coordinate one or multiple codoop-cast projects from topics or exis
 
 # Project production
 
-Before producing content, follow the shared [artifact language policy](../codoop-setup/references/language.md). Resolve the configured target language; the English instructions do not imply English deliverables.
+Before producing content, read the shared [production settings](../codoop-setup/references/production-settings.md) for language, aspect, resolution, fps, captions and avatar configuration. Follow the shared [artifact language policy](../codoop-setup/references/language.md). Resolve the configured target language; the English instructions do not imply English deliverables.
 
 This is the host Agent's workflow skill. It calls existing independent skills; the local produce commands persist plans/checkpoints and do not autonomously search, write, synthesize or render. Single projects and persistent sequential batches use the same per-project workflow; no HTTP service or background scheduler is required.
 

@@ -3,6 +3,7 @@ from pathlib import Path
 import time
 
 from .config import resolve, check_artifact_language
+from .video_config import resolve_video, profile_data
 from .common import CastError, digest, item_path, lock, new_id, read_json, write_json
 from .project import checked_record, inspect_project, locate, next_path, select
 
@@ -29,7 +30,7 @@ def run_files(directory, run_id):
     return root, folder, read_json(folder/'plan.json'), read_json(folder/'state.json')
 
 
-def plan(directory=None, target='exports', topic=None, force=(), language=None):
+def plan(directory=None, target='exports', topic=None, force=(), language=None, video=None):
     root, project = locate(directory)
     require(target in GRAPH and all(s in GRAPH for s in force), 'Unknown workflow stage.')
     ancestors = set()
@@ -40,7 +41,20 @@ def plan(directory=None, target='exports', topic=None, force=(), language=None):
     visit(target)
     require(set(force) <= ancestors, 'Forced stages must contribute to the selected target.')
     configuration = resolve(root, language)
+    video_settings = resolve_video(root, video) if target in ('storyboard', 'assets', 'scenes', 'exports') else None
     changed = set(force)
+    if video_settings and video_settings['video_explicit']:
+        expected_profile = profile_data(video_settings['video'])
+        for stage in ('storyboard', 'scenes', 'exports'):
+            version = project['current'][stage]
+            if version:
+                path = root/stage/version/('production/output-profile.json' if stage == 'exports' else 'output-profile.json')
+                try:
+                    matches = read_json(path).get('data') == expected_profile
+                except (OSError, ValueError):
+                    matches = False
+                if not matches:
+                    changed.add(stage)
     if configuration['output_language'] != 'auto':
         for stage, filename in (('research', 'report.json'), ('script', 'script.json')):
             version = project['current'][stage]
@@ -85,7 +99,10 @@ def plan(directory=None, target='exports', topic=None, force=(), language=None):
     with lock(root/'.cast','produce'):
         folder.mkdir(parents=True)
         record = dict(schema_version='0.1.0', kind='workflow-plan', run_id=run_id, project_id=project['project_id'],
-                      target=target, topic=topic, output_language=configuration['output_language'], language_override=language, force=list(force), created_at=time.time(), steps=steps)
+                      target=target, topic=topic, output_language=configuration['output_language'], language_override=language,
+                      video=video_settings['video'] if video_settings else None, video_override=video,
+                      video_enforced=video_settings['video_explicit'] if video_settings else False,
+                      force=list(force), created_at=time.time(), steps=steps)
         state = dict(schema_version='0.1.0', run_id=run_id, plan_sha256=None,
                      steps={s['stage']:dict(state='reused' if s['action']=='reuse' else 'pending', version=s['version'],
                                           manifest_sha256=s['manifest_sha256'], job_id=None, attempts=0) for s in steps}, events=[])
@@ -100,6 +117,8 @@ def changed_inputs(root, folder, plan, state):
     _, project = locate(root)
     if 'output_language' in plan and resolve(root, plan.get('language_override'))['output_language'] != plan['output_language']:
         reasons.append('Output language changed; create a new plan.')
+    if plan.get('video') is not None and resolve_video(root, plan.get('video_override'))['video'] != plan['video']:
+        reasons.append('Video configuration changed; create a new plan.')
     if project['project_id'] != plan['project_id'] or digest(folder/'plan.json') != state['plan_sha256']:
         reasons.append('Project identity or saved plan changed.')
     for stage, entry in state['steps'].items():
@@ -127,7 +146,7 @@ def status(directory, run_id):
     for step in record['steps']:
         if entries[step['stage']]['state'] not in ('reused','succeeded','running') and all(entries[p]['state'] in ('reused','succeeded') for p in step['dependencies']):
             available.append(dict(stage=step['stage'],action=step['action'],skill=SKILLS.get(step['stage'], step['skill'])))
-    return dict(status='ready',run_id=run_id,workflow_state=phase,output_language=record.get('output_language'),target=record['target'],project=str(root),
+    return dict(status='ready',run_id=run_id,workflow_state=phase,output_language=record.get('output_language'),video=record.get('video'),target=record['target'],project=str(root),
                 plan=str(folder/'plan.json'),state=str(folder/'state.json'),steps=entries,
                 next_steps=available if not changes else [],changed_inputs=changes,
                 note='The host agent executes skills; recorded progress is not approval or factual verification.')
@@ -156,6 +175,10 @@ def update(directory, run_id, stage, operation, version=None, job_id=None, messa
             if stage in ('research', 'script') and record.get('output_language', 'auto') != 'auto':
                 filename = 'report.json' if stage == 'research' else 'script.json'
                 check_artifact_language(read_json(root/stage/version/filename), root, record['output_language'])
+            if stage in ('storyboard', 'scenes', 'exports') and record.get('video_enforced'):
+                profile = root/stage/version/('production/output-profile.json' if stage == 'exports' else 'output-profile.json')
+                require(profile.is_file() and read_json(profile).get('data') == profile_data(record['video']),
+                        'Output profile differs from the planned video configuration; prepare a matching new version.')
             actual={d['stage']:d for d in registered['dependencies']}
             for parent in step['dependencies']:
                 expected=state['steps'][parent]
