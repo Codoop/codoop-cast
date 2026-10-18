@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codoop Cast Setup"
+  short_description: "Prepare and check local codoop-cast feature environments"
+  default_prompt: "Use $codoop-cast-setup to check and prepare the features I need."

@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "report",
+  "artifact_id": "research-subtitle-timing",
+  "revision": 1,
+  "data": {
+    "topic": "字幕为什么需要时间轴",
+    "audience": "第一次制作知识口播视频的用户",
+    "as_of": "2026-10-17",
+    "mode": "online",
+    "state": "ready",
+    "scope_summary": "用 WebVTT 的字幕条目说明时间轴的作用；不比较自动对齐模型，也不讨论平台投稿规则。",
+    "summary": {
+      "text": "字幕需要知道什么时候出现、什么时候消失。以 WebVTT 为例，每条字幕除了文字，还包含开始和结束时间。",
+      "claim_ids": [
+        "claim-cue-times"
+      ]
+    },
+    "sections": [
+      {
+        "id": "section-example",
+        "title": "把字幕理解成一张带时间的提示卡",
+        "paragraphs": [
+          {
+            "text": "你可以把一条字幕理解成一张提示卡：卡片上写着要显示的文字，也写着开始和结束时间。WebVTT 用这样的条目把文本与音视频时间联系起来。",
+            "claim_ids": [
+              "claim-cue-times"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-change",
+        "title": "换了配音，为什么要重新核对",
+        "paragraphs": [
+          {
+            "text": "由这个机制可以推得：如果新配音把某句话挪到了不同的时间，旧字幕还在原来的时刻出现，就可能提前或延后。因此，配音改变后应重新核对字幕时间；文字一样，也不代表旧时间仍然合适。",
+            "claim_ids": [
+              "claim-recheck"
+            ]
+          }
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "claim-cue-times",
+        "text": "WebVTT 的 cue 包含开始时间、结束时间和文本内容。",
+        "kind": "fact",
+        "evidence_ids": [
+          "evidence-mdn-cue"
+        ],
+        "limitations": [
+          "这里以 WebVTT 为例，没有逐一核对所有字幕文件格式。"
+        ]
+      },
+      {
+        "id": "claim-recheck",
+        "text": "若一句话在新音轨中的位置改变，字幕应重新核对时间，否则可能提前或延后。",
+        "kind": "inference",
+        "evidence_ids": [
+          "evidence-mdn-cue"
+        ],
+        "limitations": [
+          "这是根据字幕显示机制的推论，不是自动对齐准确率的实测结果。"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "source-mdn",
+        "title": "MDN：WebVTT API",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API",
+        "source_type": "webpage",
+        "accessed_at": "2026-10-17T21:58:06+08:00",
+        "published_at": null,
+        "read_status": "excerpt",
+        "snapshot_path": "sources/mdn-webvtt.md",
+        "snapshot_sha256": "097b2f56d6a55ecdfbe2d232e92045a7d2142da9f0396e8b22ffb310d8eb42c7",
+        "notes": "读取了定义和 Concepts and usage 的相关段落；仅留存简短中文转述，不是全文存档，发布日期未知。"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "evidence-mdn-cue",
+        "source_id": "source-mdn",
+        "text": "WebVTT 的单条 cue 有开始时间、结束时间和文本内容，用于与音视频对齐。",
+        "kind": "paraphrase",
+        "locator": "Concepts and usage：关于 individual time-aligned units/cues 的段落"
+      }
+    ],
+    "unknowns": [
+      {
+        "id": "unknown-aligner",
+        "question": "自动对齐工具对这段配音到底有多准确？",
+        "impact": "本报告没有做工具实测，制作视频时仍需听看检查。"
+      }
+    ],
+    "conflicts": []
+  }
+}

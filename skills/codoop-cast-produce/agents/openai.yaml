@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codoop Cast Produce"
+  short_description: "Coordinate a resumable local content-to-video workflow"
+  default_prompt: "Use $codoop-cast-produce to continue this content project and deliver a video while reusing accepted outputs."

@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "timeline",
+  "artifact_id": "demo-timeline",
+  "revision": 1,
+  "data": {
+    "video-script": {
+      "artifact_id": "demo-video-script",
+      "revision": 1
+    },
+    "output-profile": {
+      "artifact_id": "demo-output-profile",
+      "revision": 1
+    },
+    "audio": {
+      "artifact_id": "demo-audio",
+      "revision": 1
+    },
+    "alignment": {
+      "artifact_id": "demo-alignment",
+      "revision": 1
+    },
+    "scene": {
+      "artifact_id": "demo-scene",
+      "revision": 1
+    },
+    "state": "blocked",
+    "duration_samples": 2304000,
+    "sample_rate": 32000,
+    "scenes": [],
+    "blockers": [
+      "需要关联用户本地音频",
+      "需要真实字词对齐",
+      "需要实现HTML场景"
+    ]
+  }
+}

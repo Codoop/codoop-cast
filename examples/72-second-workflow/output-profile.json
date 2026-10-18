@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "output-profile",
+  "artifact_id": "demo-output-profile",
+  "revision": 1,
+  "data": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "subtitle_style": {
+      "font_family": "sans-serif",
+      "font_size": 48,
+      "color": "#FFFFFF",
+      "bottom_margin_ratio": 0.12
+    },
+    "avatar": {
+      "enabled": true,
+      "mode": "placeholder",
+      "x": 0.76,
+      "y": 0.65,
+      "width": 0.2,
+      "height": 0.16
+    }
+  }
+}

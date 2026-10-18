@@ -1,0 +1,221 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "kind": {
+      "const": "timeline"
+    },
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "video-script": {
+          "type": "object",
+          "required": [
+            "artifact_id",
+            "revision"
+          ],
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "audio": {
+          "type": "object",
+          "required": [
+            "artifact_id",
+            "revision"
+          ],
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "alignment": {
+          "type": "object",
+          "required": [
+            "artifact_id",
+            "revision"
+          ],
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "scene": {
+          "type": "object",
+          "required": [
+            "artifact_id",
+            "revision"
+          ],
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "output-profile": {
+          "type": "object",
+          "required": [
+            "artifact_id",
+            "revision"
+          ],
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "state": {
+          "enum": [
+            "blocked",
+            "ready"
+          ]
+        },
+        "duration_samples": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sample_rate": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "scenes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scene_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start_sample": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_sample": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "content_end_sample": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "target_id",
+                    "action",
+                    "at_sample"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "target_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "action": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "at_sample": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "scene_id",
+              "start_sample",
+              "end_sample"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "alignment_review_accepted": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "video-script",
+        "audio",
+        "alignment",
+        "scene",
+        "output-profile",
+        "state",
+        "duration_samples",
+        "sample_rate",
+        "scenes",
+        "blockers"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "artifact_id",
+    "revision",
+    "data"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

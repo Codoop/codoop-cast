@@ -1,0 +1,154 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "video-script",
+  "artifact_id": "demo-video-script",
+  "revision": 1,
+  "data": {
+    "script": {
+      "artifact_id": "demo-script",
+      "revision": 1
+    },
+    "assets": {
+      "artifact_id": "demo-assets",
+      "revision": 1
+    },
+    "scenes": [
+      {
+        "id": "scene001",
+        "paragraph_ids": [
+          "p001"
+        ],
+        "intent": "明确问题",
+        "screen_text": [
+          "明确问题"
+        ],
+        "asset_ids": [],
+        "start_anchor": {
+          "paragraph_id": "p001",
+          "edge": "start",
+          "offset_ms": 0
+        },
+        "end_anchor": {
+          "paragraph_id": "p001",
+          "edge": "end",
+          "offset_ms": 0
+        },
+        "events": [
+          {
+            "id": "event001",
+            "target_id": "title",
+            "action": "reveal",
+            "anchor": {
+              "paragraph_id": "p001",
+              "edge": "start",
+              "offset_ms": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "scene002",
+        "paragraph_ids": [
+          "p002"
+        ],
+        "intent": "整理资料与组织表达",
+        "screen_text": [
+          "整理资料与组织表达"
+        ],
+        "asset_ids": [],
+        "start_anchor": {
+          "paragraph_id": "p002",
+          "edge": "start",
+          "offset_ms": 0
+        },
+        "end_anchor": {
+          "paragraph_id": "p002",
+          "edge": "end",
+          "offset_ms": 0
+        },
+        "events": [
+          {
+            "id": "event002",
+            "target_id": "title",
+            "action": "reveal",
+            "anchor": {
+              "paragraph_id": "p002",
+              "edge": "start",
+              "offset_ms": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "scene003",
+        "paragraph_ids": [
+          "p003"
+        ],
+        "intent": "自动配音与质量检查",
+        "screen_text": [
+          "自动配音与质量检查"
+        ],
+        "asset_ids": [],
+        "start_anchor": {
+          "paragraph_id": "p003",
+          "edge": "start",
+          "offset_ms": 0
+        },
+        "end_anchor": {
+          "paragraph_id": "p003",
+          "edge": "end",
+          "offset_ms": 0
+        },
+        "events": [
+          {
+            "id": "event003",
+            "target_id": "title",
+            "action": "reveal",
+            "anchor": {
+              "paragraph_id": "p003",
+              "edge": "start",
+              "offset_ms": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "scene004",
+        "paragraph_ids": [
+          "p004"
+        ],
+        "intent": "字幕画面对齐与导出",
+        "screen_text": [
+          "字幕画面对齐与导出"
+        ],
+        "asset_ids": [],
+        "start_anchor": {
+          "paragraph_id": "p004",
+          "edge": "start",
+          "offset_ms": 0
+        },
+        "end_anchor": {
+          "paragraph_id": "p004",
+          "edge": "end",
+          "offset_ms": 0
+        },
+        "events": [
+          {
+            "id": "event004",
+            "target_id": "title",
+            "action": "reveal",
+            "anchor": {
+              "paragraph_id": "p004",
+              "edge": "start",
+              "offset_ms": 0
+            }
+          }
+        ]
+      }
+    ],
+    "output-profile": {
+      "artifact_id": "demo-output-profile",
+      "revision": 1
+    }
+  }
+}

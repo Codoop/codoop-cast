@@ -1,0 +1,125 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "kind": {
+      "const": "output-profile"
+    },
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "fps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "subtitle_style": {
+          "type": "object",
+          "properties": {
+            "font_family": {
+              "type": "string",
+              "minLength": 1
+            },
+            "font_size": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "color": {
+              "type": "string",
+              "minLength": 1
+            },
+            "bottom_margin_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "font_family",
+            "font_size",
+            "color",
+            "bottom_margin_ratio"
+          ],
+          "additionalProperties": false
+        },
+        "avatar": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "mode": {
+              "enum": [
+                "placeholder",
+                "media"
+              ]
+            },
+            "x": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "y": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "width": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            },
+            "height": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "enabled",
+            "mode",
+            "x",
+            "y",
+            "width",
+            "height"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "width",
+        "height",
+        "fps",
+        "subtitle_style",
+        "avatar"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "artifact_id",
+    "revision",
+    "data"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

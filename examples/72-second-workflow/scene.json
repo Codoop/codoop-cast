@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "scene",
+  "artifact_id": "demo-scene",
+  "revision": 1,
+  "data": {
+    "video-script": {
+      "artifact_id": "demo-video-script",
+      "revision": 1
+    },
+    "renderer_contract": "render-at-time-v1",
+    "items": [
+      {
+        "id": "scene001",
+        "status": "planned",
+        "entry": null,
+        "element_ids": [
+          "title"
+        ],
+        "asset_ids": [],
+        "layout_modes": [
+          "portrait",
+          "landscape"
+        ]
+      },
+      {
+        "id": "scene002",
+        "status": "planned",
+        "entry": null,
+        "element_ids": [
+          "title"
+        ],
+        "asset_ids": [],
+        "layout_modes": [
+          "portrait",
+          "landscape"
+        ]
+      },
+      {
+        "id": "scene003",
+        "status": "planned",
+        "entry": null,
+        "element_ids": [
+          "title"
+        ],
+        "asset_ids": [],
+        "layout_modes": [
+          "portrait",
+          "landscape"
+        ]
+      },
+      {
+        "id": "scene004",
+        "status": "planned",
+        "entry": null,
+        "element_ids": [
+          "title"
+        ],
+        "asset_ids": [],
+        "layout_modes": [
+          "portrait",
+          "landscape"
+        ]
+      }
+    ]
+  }
+}

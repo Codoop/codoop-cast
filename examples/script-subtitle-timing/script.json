@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "script",
+  "artifact_id": "script-subtitle-timing",
+  "revision": 1,
+  "data": {
+    "language": "zh",
+    "provenance": "Based on research-subtitle-timing revision 1; narration only, retains mechanism-based inference and does not claim measured alignment accuracy.",
+    "source": {
+      "kind": "report",
+      "artifact_id": "research-subtitle-timing",
+      "revision": 1
+    },
+    "paragraphs": [
+      {
+        "id": "p-opening",
+        "display_text": "字幕文字没错，播放时却可能比声音早一点，或者晚一点。原因可能就出在时间上。",
+        "spoken_text": "字幕文字没错，播放时却可能比声音早一点，或者晚一点。原因可能就出在时间上。",
+        "claim_ids": [
+          "claim-recheck"
+        ]
+      },
+      {
+        "id": "p-clock",
+        "display_text": "拿 WebVTT 这种字幕格式举例，你可以把每条字幕当成一张提示卡。卡片上除了文字，还有开始和结束时间，用来安排字幕什么时候出现、什么时候消失。",
+        "spoken_text": "拿 WebVTT 这种字幕格式举例，你可以把每条字幕当成一张提示卡。卡片上除了文字，还有开始和结束时间，用来安排字幕什么时候出现、什么时候消失。",
+        "claim_ids": [
+          "claim-cue-times"
+        ]
+      },
+      {
+        "id": "p-recheck",
+        "display_text": "由这个机制可以推得，如果换了一段配音，同一句话出现的时间变了，原来的字幕时间就可能不合适。哪怕文字没改，也应该重新听一遍、看一遍，核对字幕有没有跟上声音。",
+        "spoken_text": "由这个机制可以推得，如果换了一段配音，同一句话出现的时间变了，原来的字幕时间就可能不合适。哪怕文字没改，也应该重新听一遍、看一遍，核对字幕有没有跟上声音。",
+        "claim_ids": [
+          "claim-recheck"
+        ]
+      }
+    ]
+  }
+}

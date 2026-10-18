@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1.0",
+  "artifacts": [
+    {
+      "path": "script.json",
+      "sha256": "d9987c3f3fb3d6be1a0d7b52100dfed254fdff6ac5dde4267572233a91a9b6a6"
+    },
+    {
+      "path": "video-script.json",
+      "sha256": "b1c1045dcf112121ad830c4b9ad50aad4c8c243bee6c849f36625be07cd51ffa"
+    },
+    {
+      "path": "assets.json",
+      "sha256": "a882073c9db06c34f496705faecb2bda2748f5028d31bedc350b6e9b41c22089"
+    },
+    {
+      "path": "scene.json",
+      "sha256": "e20ff1f8bc34f17e75c495bd58b0e110e8d8d32a6acc110af27fe80e8630ea12"
+    },
+    {
+      "path": "audio.json",
+      "sha256": "e4c2dcbf8b49a95cd93191a6e18c1ed45f58efd3c53d6ff77a99af0e69d652ca"
+    },
+    {
+      "path": "alignment.json",
+      "sha256": "0edfcc76437650d0d972edf3d9e976a0f5d578a1747332b78816e126fda43655"
+    },
+    {
+      "path": "timeline.json",
+      "sha256": "58b17ea09efee75774885a4f121101f060bbd36ec33c9b15004df928add341fd"
+    },
+    {
+      "path": "output-profile.json",
+      "sha256": "4b71ecd1e1ab6eb08f2ca0e68fb56d7f79a03e34d5ecc67d9f81bbfd1302caab"
+    }
+  ]
+}

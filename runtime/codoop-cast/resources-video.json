@@ -1,0 +1,8 @@
+{
+  "playwright": "1.56.0",
+  "browser_version": "141.0.7390.37",
+  "browser_revision": "1194",
+  "browser_relative_path": "browsers/video/chromium_headless_shell-1194/chrome-win/headless_shell.exe",
+  "browser_sha256": "ed19d88b4486c39c0265b0c07cbf1d6835d06069e600bede1adb09db0df46c8e",
+  "download_note": "Playwright version pins its vendor browser build; setup verifies executable hash and real launch. Browser resources are fetched by the pinned Playwright installer."
+}

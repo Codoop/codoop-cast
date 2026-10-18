@@ -1,0 +1,7 @@
+# Maintainer experiment only; not yet a registered setup feature.
+transformers==5.13.0
+accelerate==1.12.0
+librosa==0.11.0
+soundfile==0.13.1
+numpy==2.2.6
+jieba==0.42.1

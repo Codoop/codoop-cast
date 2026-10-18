@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "alignment",
+  "artifact_id": "demo-alignment",
+  "revision": 1,
+  "data": {
+    "script": {
+      "artifact_id": "demo-script",
+      "revision": 1
+    },
+    "audio": {
+      "artifact_id": "demo-audio",
+      "revision": 1
+    },
+    "state": "pending",
+    "timebase": "audio_samples",
+    "units": [],
+    "cues": [],
+    "issues": [
+      "尚未运行字词对齐，不生成虚构字幕时间。"
+    ]
+  }
+}

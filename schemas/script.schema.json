@@ -1,0 +1,155 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "kind": {
+      "const": "script"
+    },
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "display_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "spoken_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "pronunciation_spans": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "display_start",
+                    "display_end",
+                    "spoken_start",
+                    "spoken_end"
+                  ],
+                  "properties": {
+                    "display_start": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "display_end": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "spoken_start": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "spoken_end": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "id",
+              "display_text",
+              "spoken_text",
+              "claim_ids"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "source": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "kind",
+                "artifact_id",
+                "revision"
+              ],
+              "properties": {
+                "kind": {
+                  "const": "report"
+                },
+                "artifact_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "revision": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": [
+                "kind",
+                "sha256"
+              ],
+              "properties": {
+                "kind": {
+                  "const": "external"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "language",
+        "provenance",
+        "paragraphs"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "artifact_id",
+    "revision",
+    "data"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,170 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "kind": {
+      "const": "audio"
+    },
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "script": {
+          "type": "object",
+          "required": [
+            "artifact_id",
+            "revision"
+          ],
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "origin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sample_rate": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "total_samples": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "media_available": {
+          "type": "boolean"
+        },
+        "media_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start_sample": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_sample": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "spoken_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "script_spans": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "paragraph_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "start": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  },
+                  "required": [
+                    "paragraph_id",
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "normalized_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text_mapping": {
+                "type": "object"
+              },
+              "display_span": {
+                "type": "object",
+                "properties": {
+                  "paragraph_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "start": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "end": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                },
+                "required": [
+                  "paragraph_id",
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "id",
+              "start_sample",
+              "end_sample",
+              "spoken_text",
+              "script_spans"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "script",
+        "origin",
+        "sample_rate",
+        "total_samples",
+        "media_available",
+        "media_path",
+        "segments"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "artifact_id",
+    "revision",
+    "data"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

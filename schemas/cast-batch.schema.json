@@ -1,0 +1,225 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "kind": {
+      "const": "cast-batch"
+    },
+    "batch_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "active",
+        "paused",
+        "cancelled"
+      ]
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "project_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "project_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "topic": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "target": {
+            "enum": [
+              "research",
+              "script",
+              "storyboard",
+              "voice",
+              "subtitles",
+              "assets",
+              "scenes",
+              "exports"
+            ]
+          },
+          "force": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "research",
+                "script",
+                "storyboard",
+                "voice",
+                "subtitles",
+                "assets",
+                "scenes",
+                "exports"
+              ]
+            }
+          },
+          "state": {
+            "enum": [
+              "pending",
+              "active",
+              "succeeded",
+              "failed",
+              "needs_input",
+              "needs_replan",
+              "cancelled"
+            ]
+          },
+          "run_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "run_history": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "attempts": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "workflow_state": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "output": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "stage": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "version": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "stage",
+                  "version",
+                  "path"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "worker_stopped_asserted": {
+            "type": "boolean"
+          },
+          "brief": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "project_path",
+          "project_id",
+          "name",
+          "topic",
+          "target",
+          "force",
+          "state",
+          "run_id",
+          "run_history",
+          "attempts",
+          "error",
+          "workflow_state",
+          "output"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "item_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "at": {
+            "type": "number"
+          },
+          "message": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "action",
+          "item_id",
+          "at",
+          "message"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "brief": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "batch_id",
+    "name",
+    "mode",
+    "items",
+    "events"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

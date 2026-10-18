@@ -1,0 +1,116 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "kind": {
+      "const": "scene"
+    },
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "video-script": {
+          "type": "object",
+          "required": [
+            "artifact_id",
+            "revision"
+          ],
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "renderer_contract": {
+          "const": "render-at-time-v1"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "enum": [
+                  "planned",
+                  "ready"
+                ]
+              },
+              "entry": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "element_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "asset_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "layout_modes": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "portrait",
+                    "landscape"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "status",
+              "entry",
+              "element_ids",
+              "asset_ids",
+              "layout_modes"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "video-script",
+        "renderer_contract",
+        "items"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "artifact_id",
+    "revision",
+    "data"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

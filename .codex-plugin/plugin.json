@@ -1,0 +1,10 @@
+{
+  "name": "codoop-cast",
+  "version": "0.1.0-alpha.1",
+  "description": "Research, narration, local voice, subtitles and video skills with resumable single-project and sequential batch agent workflows.",
+  "author": {
+    "name": "Codoop"
+  },
+  "repository": "https://github.com/Codoop/codoop-cast",
+  "skills": "./skills/"
+}

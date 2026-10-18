@@ -1,0 +1,13 @@
+{
+  "name": "codoop-cast",
+  "owner": {
+    "name": "Codoop"
+  },
+  "plugins": [
+    {
+      "name": "codoop-cast",
+      "source": "./",
+      "description": "Local content-to-video skills with resumable project and batch workflows"
+    }
+  ]
+}

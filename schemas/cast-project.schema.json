@@ -1,0 +1,170 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "project_id",
+    "name",
+    "defaults",
+    "current"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "kind": {
+      "const": "cast-project"
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "defaults": {
+      "type": "object",
+      "required": [
+        "language",
+        "output"
+      ],
+      "properties": {
+        "language": {
+          "type": "string",
+          "minLength": 1
+        },
+        "output": {
+          "type": "object",
+          "required": [
+            "width",
+            "height",
+            "fps"
+          ],
+          "properties": {
+            "width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "fps": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "current": {
+      "type": "object",
+      "required": [
+        "research",
+        "script",
+        "storyboard",
+        "assets",
+        "voice",
+        "subtitles",
+        "scenes",
+        "exports"
+      ],
+      "properties": {
+        "research": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^v[0-9]{3,}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "script": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^v[0-9]{3,}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "storyboard": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^v[0-9]{3,}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "assets": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^v[0-9]{3,}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "voice": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^v[0-9]{3,}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "subtitles": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^v[0-9]{3,}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "scenes": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^v[0-9]{3,}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "exports": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^v[0-9]{3,}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

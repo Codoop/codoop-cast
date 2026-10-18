@@ -1,0 +1,29 @@
+{
+  "assets": [
+    {
+      "target": "engines/gpt-sovits/GPT_SoVITS/pretrained_models/s1v3.ckpt",
+      "size": 155284856,
+      "sha256": "87133414860ea14ff6620c483a3db5ed07b44be42e2c3fcdad65523a729a745a",
+      "url": "https://huggingface.co/lj1995/GPT-SoVITS/resolve/8f8857563c040d542de108a2c18b0425abd6c9c5/s1v3.ckpt"
+    },
+    {
+      "target": "engines/gpt-sovits/GPT_SoVITS/pretrained_models/sv/pretrained_eres2netv2w24s4ep4.ckpt",
+      "size": 107528697,
+      "sha256": "4f5a0bf73c61eb41b174e1bb54e7ee3c83233892be8e0af1f187024e8e581a35",
+      "url": "https://huggingface.co/lj1995/GPT-SoVITS/resolve/8f8857563c040d542de108a2c18b0425abd6c9c5/sv/pretrained_eres2netv2w24s4ep4.ckpt"
+    },
+    {
+      "target": "engines/gpt-sovits/GPT_SoVITS/pretrained_models/v2Pro/s2Gv2Pro.pth",
+      "size": 162303657,
+      "sha256": "0f8ead815234365edf045c6d86370ed6e4f440e8195be77ff0ea72684ad406a5",
+      "url": "https://huggingface.co/lj1995/GPT-SoVITS/resolve/8f8857563c040d542de108a2c18b0425abd6c9c5/v2Pro/s2Gv2Pro.pth"
+    },
+    {
+      "target": "engines/gpt-sovits/GPT_SoVITS/pretrained_models/v2Pro/s2Gv2ProPlus.pth",
+      "size": 200125741,
+      "sha256": "d42a22bbbf65fb2bbdd45ad6a66841156977db45c7aabe0a6992ff378d9c7d3b",
+      "url": "https://huggingface.co/lj1995/GPT-SoVITS/resolve/8f8857563c040d542de108a2c18b0425abd6c9c5/v2Pro/s2Gv2ProPlus.pth"
+    }
+  ],
+  "purpose": "Maintainer comparison resources; v2Pro dependencies also ship in default setup, v2ProPlus remains optional"
+}

@@ -1,0 +1,295 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "kind": {
+      "const": "video-script"
+    },
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "script": {
+          "type": "object",
+          "required": [
+            "artifact_id",
+            "revision"
+          ],
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "assets": {
+          "type": "object",
+          "required": [
+            "artifact_id",
+            "revision"
+          ],
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "output-profile": {
+          "type": "object",
+          "required": [
+            "artifact_id",
+            "revision"
+          ],
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "scenes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "paragraph_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "intent": {
+                "type": "string",
+                "minLength": 1
+              },
+              "screen_text": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "asset_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "start_anchor": {
+                "type": "object",
+                "properties": {
+                  "paragraph_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "edge": {
+                    "enum": [
+                      "start",
+                      "end"
+                    ]
+                  },
+                  "offset_ms": {
+                    "type": "integer"
+                  },
+                  "text_range": {
+                    "type": "object",
+                    "required": [
+                      "start",
+                      "end"
+                    ],
+                    "properties": {
+                      "start": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "end": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "paragraph_id",
+                  "edge",
+                  "offset_ms"
+                ],
+                "additionalProperties": false
+              },
+              "end_anchor": {
+                "type": "object",
+                "properties": {
+                  "paragraph_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "edge": {
+                    "enum": [
+                      "start",
+                      "end"
+                    ]
+                  },
+                  "offset_ms": {
+                    "type": "integer"
+                  },
+                  "text_range": {
+                    "type": "object",
+                    "required": [
+                      "start",
+                      "end"
+                    ],
+                    "properties": {
+                      "start": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "end": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "paragraph_id",
+                  "edge",
+                  "offset_ms"
+                ],
+                "additionalProperties": false
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "target_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "action": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "anchor": {
+                      "type": "object",
+                      "properties": {
+                        "paragraph_id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "edge": {
+                          "enum": [
+                            "start",
+                            "end"
+                          ]
+                        },
+                        "offset_ms": {
+                          "type": "integer"
+                        },
+                        "text_range": {
+                          "type": "object",
+                          "required": [
+                            "start",
+                            "end"
+                          ],
+                          "properties": {
+                            "start": {
+                              "type": "integer",
+                              "minimum": 0
+                            },
+                            "end": {
+                              "type": "integer",
+                              "minimum": 1
+                            }
+                          },
+                          "additionalProperties": false
+                        }
+                      },
+                      "required": [
+                        "paragraph_id",
+                        "edge",
+                        "offset_ms"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "target_id",
+                    "action",
+                    "anchor"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "id",
+              "paragraph_ids",
+              "intent",
+              "screen_text",
+              "asset_ids",
+              "start_anchor",
+              "end_anchor",
+              "events"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "script",
+        "assets",
+        "output-profile",
+        "scenes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "artifact_id",
+    "revision",
+    "data"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

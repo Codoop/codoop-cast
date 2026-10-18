@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "codoop-cast shared configuration",
+  "type": "object",
+  "properties": {
+    "schema_version": { "const": 1 },
+    "output_language": {
+      "type": "string",
+      "pattern": "^(auto|[A-Za-z]{2,8}(-[A-Za-z0-9]{1,8})*)$"
+    }
+  },
+  "required": ["schema_version", "output_language"],
+  "additionalProperties": true
+}
