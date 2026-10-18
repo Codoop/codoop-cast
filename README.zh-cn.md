@@ -4,6 +4,8 @@
 
 本地优先的社交媒体知识口播内容制作工具。将话题调研、口播稿撰写、声音克隆与配音、字幕对齐和视频制作组织为可独立使用的模块，并支持组合为批量制作流程。
 
+当前版本：[v0.1.0-alpha.2](docs/zh-cn/releases/v0.1.0-alpha.2.md)（预发布）。
+
 当前阶段：声音、字幕与 HTML 视频制作的 alpha 实现及本机验证。已有 setup/research/script/voice/subtitles/storyboard/assets/scenes/video/produce 十个 skills；原生 Agent 安装与其他硬件兼容性仍需分别验证。使用方法与限制见[声音复制运行说明](docs/zh-cn/08-running-voice.md)及[字幕运行说明](docs/zh-cn/16-subtitles-running.md)。
 
 当前配音默认使用 GPT-SoVITS v2Pro，保存原稿和独立配音文本，通过保守的标点处理引导停顿。新任务不再叠加固定段间静音；旧任务继续使用创建时记录的模型与间隔。方案和验证见[停顿对比](docs/zh-cn/11-pause-comparison.md)。
