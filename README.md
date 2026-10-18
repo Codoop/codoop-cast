@@ -4,7 +4,7 @@
 
 A local-first agent plugin for narrated social-media knowledge videos. Research a topic, write narration, clone a reference voice, align captions and create animated HTML visuals/MP4. Use capabilities independently or combine them into sequential batches.
 
-Current version: [v0.1.0-alpha.2](docs/en/releases/v0.1.0-alpha.2.md) (pre-release).
+Current version: [v0.1.0-alpha.3](docs/en/releases/v0.1.0-alpha.3.md) (pre-release).
 
 Current stage: alpha implementation and local validation. Ten skills cover setup, research, script, voice, subtitles, storyboard, assets, scenes, video and produce. Native host installation and additional hardware require separate acceptance; see [release readiness](docs/en/29-release-readiness.md).
 

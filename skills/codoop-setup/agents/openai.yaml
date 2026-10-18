@@ -1,4 +1,4 @@
 interface:
-  display_name: "Codoop Setup"
+  display_name: "Codoop Cast: Setup"
   short_description: "Configure production defaults and local environments"
   default_prompt: "Use $codoop-setup to check and prepare the features I need."

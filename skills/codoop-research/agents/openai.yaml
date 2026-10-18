@@ -1,4 +1,4 @@
 interface:
-  display_name: "Codoop Research"
+  display_name: "Codoop Cast: Research"
   short_description: "Research topics with clear reports and source evidence"
   default_prompt: "Use $codoop-research to research this topic and produce a beginner-friendly report with sources."
