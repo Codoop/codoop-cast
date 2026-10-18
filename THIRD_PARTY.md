@@ -1,5 +1,7 @@
 # Third-party resources
 
+[English](THIRD_PARTY.md) | [简体中文](THIRD_PARTY.zh-cn.md)
+
 codoop-cast's original code is licensed under Apache-2.0; this does not relicense dependencies, downloaded models, fonts, source excerpts or user media. The repository distributes adapters, dependency pins and resource manifests, not a bundle of model weights or installed environments.
 
 ## Resource inventory

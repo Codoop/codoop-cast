@@ -16,7 +16,7 @@ def main():
     home = (args.agent_home or Path.home() / ('.' + args.agent)).expanduser().resolve()
     # Use a complete namespaced bundle and point skill discovery at its folders.
     bundle = home / 'codoop-plugins/codoop-cast'
-    actions = [{'source': str(source / folder), 'target': str(bundle / folder)} for folder in ('skills', 'runtime', 'scripts', 'schemas', 'LICENSE', 'NOTICE', 'THIRD_PARTY.md') if (source / folder).exists()]
+    actions = [{'source': str(source / folder), 'target': str(bundle / folder)} for folder in ('skills', 'runtime', 'scripts', 'schemas', 'LICENSE', 'NOTICE', 'THIRD_PARTY.md', 'THIRD_PARTY.zh-cn.md') if (source / folder).exists()]
     # Reject discovery collisions before copying or upgrading any bundle files.
     discovery = home / 'skills'
     for skill in (source / 'skills').iterdir():
