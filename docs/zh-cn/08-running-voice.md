@@ -23,7 +23,7 @@ Windows 维护者可运行（仓库根目录）：
 
 默认数据目录是 `%LOCALAPPDATA%/codoop-cast`。如需其他磁盘，在所有命令的子进程环境中使用同一 `CODOOP_CAST_HOME`；已有数据不会因改变目录而自动迁移。首次安装包括约 2.3GB 模型下载（含本地识别模型）、CUDA PyTorch 和其他依赖，还需要解压及缓存空间。以资源清单和磁盘检查为准。
 
-命令参数和 skill 执行规则见 [配音调用参考](../../skills/codoop-cast-voice/references/execution.md)。
+命令参数和 skill 执行规则见 [配音调用参考](../../skills/codoop-voice/references/execution.md)。
 
 ## Agent 分发
 

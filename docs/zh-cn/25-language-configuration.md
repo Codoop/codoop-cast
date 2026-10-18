@@ -51,7 +51,7 @@ research/script 的 validate/export、speech generate、外部音频的 subtitle
 
 Agent 可撰写其他语言的内容；当前配音/对齐适配层仅接通 zh/en，并在模型初始化之前拒绝其他语言或未解析的 auto。英文参数传递和导出已做自动化验证；本次没有重新合成英语音频，未确认英语音色、发音与对齐质量。参考录音的语言是独立设置，不随产物配置改变。
 
-统一规则位于 `skills/codoop-cast-setup/references/language.md`，所有 skill 都必须先遵守它，不另外维护各自的语言默认值。
+统一规则位于 `skills/codoop-setup/references/language.md`，所有 skill 都必须先遵守它，不另外维护各自的语言默认值。
 
 参考：
 

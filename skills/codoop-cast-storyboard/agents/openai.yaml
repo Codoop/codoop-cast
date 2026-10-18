@@ -1,4 +1,0 @@
-interface:
-  display_name: "Codoop Cast Storyboard"
-  short_description: "Plan semantic scenes from a narration script"
-  default_prompt: "Use $codoop-cast-storyboard for this storyboard task."

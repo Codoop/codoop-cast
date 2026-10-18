@@ -3,7 +3,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'runtime/codoop-cast'))
 from castlib import project,produce
-from castlib.common import CastError,read_json,write_json
+from castlib.common import CastError,read_json,write_json,digest
 
 class ProduceTests(unittest.TestCase):
  def setUp(self):
@@ -16,6 +16,14 @@ class ProduceTests(unittest.TestCase):
   project.register(self.root,stage,version,deps,state)
   if select:project.select(self.root,stage,version)
  def record(self,result):return read_json(result['plan'])
+ def test_old_saved_plan_routes_to_current_skill_names(self):
+  result=produce.plan(self.root,target='research')
+  plan=read_json(result['plan']);plan['steps'][0]['skill']='codoop-cast-research'
+  write_json(result['plan'],plan)
+  state=read_json(result['state']);state['plan_sha256']=digest(result['plan']);write_json(result['state'],state)
+  restored=produce.status(self.root,result['run_id'])
+  self.assertEqual(restored['next_steps'][0]['skill'],'codoop-research')
+  self.assertEqual(read_json(result['plan'])['steps'][0]['skill'],'codoop-cast-research')
  def test_new_project_expands_all_prerequisites(self):
   result=produce.plan(self.root)
   self.assertEqual({s['stage'] for s in self.record(result)['steps']},set(produce.GRAPH))

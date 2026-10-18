@@ -39,7 +39,7 @@ Pipe frames in memory to FFmpeg without thousands of temporary images. Encode H.
 
 Both aspects run 72 seconds/2160 frames at 1080×1920 and 1920×1080. Inspect a representative frame per scene for bounds/avatar overlap; check full decode, durations, color/streams after export.
 
-Deliveries: `codoop-cast-portrait-final.mp4` (3,572,504 bytes), `codoop-cast-landscape-v3.mp4` (3,315,849 bytes). Both decoded fully with the stated encoding/time/range. Editable packages were combined into `codoop-cast-video-projects.zip`. Encoded-frame review corrected an unwanted landscape title wrap and added an inspect check.
+Deliveries: `codoop-cast-portrait-final.mp4` (3,572,504 bytes), `codoop-cast-landscape-v3.mp4` (3,315,849 bytes). Both decoded fully with the stated encoding/time/range. Editable packages were combined into `codoop-video-projects.zip`. Encoded-frame review corrected an unwanted landscape title wrap and added an inspect check.
 
 Repeated seeking compares visible DOM and images. Chromium layer rebuilding may cause minor anti-aliasing variation: per-channel maximum difference ≤3, image mean absolute difference ≤0.1, identical visible DOM. Retain raw metrics. This is neither timeline verification nor byte-identical output across browsers/machines.
 

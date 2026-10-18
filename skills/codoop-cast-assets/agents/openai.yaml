@@ -1,4 +1,0 @@
-interface:
-  display_name: "Cast Assets"
-  short_description: "Prepare and reuse video assets automatically"
-  default_prompt: "Use $codoop-cast-assets to prepare the visuals this video needs and manage their local files for me."

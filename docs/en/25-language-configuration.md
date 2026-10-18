@@ -51,7 +51,7 @@ Built-in report/script/batch/storyboard labels support Simplified Chinese/Englis
 
 Agents can author other languages; integrated speech/alignment currently routes zh/en only, rejecting others/unresolved auto before model setup. English argument/export checks passed, but no new English synthesis/listening established timbre/pronunciation/sync quality. Reference-recording language is independent.
 
-All skills follow `skills/codoop-cast-setup/references/language.md`, without per-skill competing language defaults.
+All skills follow `skills/codoop-setup/references/language.md`, without per-skill competing language defaults.
 
 References:
 

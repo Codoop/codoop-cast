@@ -1,4 +1,0 @@
-interface:
-  display_name: "Codoop Cast Scenes"
-  short_description: "Create topic-specific HTML scenes and previews"
-  default_prompt: "Use $codoop-cast-scenes for this scenes task."

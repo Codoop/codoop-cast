@@ -10,9 +10,9 @@
 
 | Skill | 可以单独接收 | 交付 |
 | --- | --- | --- |
-| codoop-cast-storyboard | 口播文本或 script.json | 标准分镜、语义锚点、审阅稿、制作包索引 |
-| codoop-cast-scenes | 分镜制作包 | 话题专属 HTML、场景清单、画面检查截图 |
-| codoop-cast-video | 分镜、场景、真实音频和对齐包 | 真实时间轴、可编辑完整制作包、MP4 |
+| codoop-storyboard | 口播文本或 script.json | 标准分镜、语义锚点、审阅稿、制作包索引 |
+| codoop-scenes | 分镜制作包 | 话题专属 HTML、场景清单、画面检查截图 |
+| codoop-video | 分镜、场景、真实音频和对齐包 | 真实时间轴、可编辑完整制作包、MP4 |
 
 用户用自然语言表达任务，由 Agent 读取 skill、创作内容、调用本地工具。规划与画面设计由 Agent 完成，不是固定的十页模板算法；准备命令只导入口播并建立规范文件，不把空目录冒充成分镜生成。视频导出不需要 HTTP 服务。
 

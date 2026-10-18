@@ -63,4 +63,4 @@ def assemble(directory, run_id, output=None):
         path=output/name; path.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(content,path)
     index_artifacts(output)
     return dict(status='ready',package=str(output),files=len(payloads),render_ready=False,
-                next_action='Compile the actual timeline, check scenes and render through codoop-cast-video.')
+                next_action='Compile the actual timeline, check scenes and render through codoop-video.')

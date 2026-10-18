@@ -16,16 +16,16 @@
 
 | Skill | 单独使用的输入 | 产物及下一步信息 | 不负责 |
 | --- | --- | --- | --- |
-| codoop-cast-setup | 指定功能或功能缺失报告 | 私有环境、资源及检查结果 | 创作或统一安装所有功能 |
-| codoop-cast-research | 话题、自有资料或检索要求 | report.json + report.md；结论 ID、证据与来源、冲突及未知项 | 写口播或生成视频 |
-| codoop-cast-script | 外部报告/资料，或 report.json | script.json + 易读稿；稳定段落 ID、展示文本、朗读文本、结论引用 | 写分镜或合成声音 |
-| codoop-cast-storyboard | 外部稿件或 script.json | video-script.json + 审阅稿；口播引用、画面意图、屏幕文字、素材需求、动画锚点 | 固定最终秒数或生成所有素材 |
-| codoop-cast-assets | 单个素材描述、自有素材，或分镜素材需求 | assets.json + 本地文件；素材 ID、来源/生成描述、摘要、尺寸、使用限制与状态 | 擅自改口播或重做无关素材 |
-| codoop-cast-voice | 原始参考音频、已存声音和外部稿件 | 当前已有 WAV、任务清单和原稿/配音稿；后续补齐段落引用及实际配音文本映射 | 字幕时间或画面 |
-| codoop-cast-subtitles | 外部音频 + 稿件，或配音任务 | alignment.json、subtitles.srt、checks.json；字词时间、文字映射、音频摘要与偏移 | 改稿补读或调整镜头内容 |
-| codoop-cast-scenes | 完整分镜或外部画面说明，以及已备素材 | 可按时间定位的本地 HTML 场景包、场景清单、预览；元素 ID、动画锚点、画幅布局与资源依赖 | TTS、修改事实或导出最终有声视频 |
-| codoop-cast-video | 标准制作包，或场景包 + 音频 + 字幕/时间映射 | 解析后的 timeline.json、预览和完整 MP4、渲染检查；输出配置和输入版本 | 自动研究、写稿、生图或替换已确认内容 |
-| codoop-cast-produce | 话题或任意已有中间产物，以及目标成品 | 调用已实现 skills，保存项目索引和执行计划，交付制作包及视频 | 重复实现其他 skill 的业务逻辑 |
+| codoop-setup | 指定功能或功能缺失报告 | 私有环境、资源及检查结果 | 创作或统一安装所有功能 |
+| codoop-research | 话题、自有资料或检索要求 | report.json + report.md；结论 ID、证据与来源、冲突及未知项 | 写口播或生成视频 |
+| codoop-script | 外部报告/资料，或 report.json | script.json + 易读稿；稳定段落 ID、展示文本、朗读文本、结论引用 | 写分镜或合成声音 |
+| codoop-storyboard | 外部稿件或 script.json | video-script.json + 审阅稿；口播引用、画面意图、屏幕文字、素材需求、动画锚点 | 固定最终秒数或生成所有素材 |
+| codoop-assets | 单个素材描述、自有素材，或分镜素材需求 | assets.json + 本地文件；素材 ID、来源/生成描述、摘要、尺寸、使用限制与状态 | 擅自改口播或重做无关素材 |
+| codoop-voice | 原始参考音频、已存声音和外部稿件 | 当前已有 WAV、任务清单和原稿/配音稿；后续补齐段落引用及实际配音文本映射 | 字幕时间或画面 |
+| codoop-subtitles | 外部音频 + 稿件，或配音任务 | alignment.json、subtitles.srt、checks.json；字词时间、文字映射、音频摘要与偏移 | 改稿补读或调整镜头内容 |
+| codoop-scenes | 完整分镜或外部画面说明，以及已备素材 | 可按时间定位的本地 HTML 场景包、场景清单、预览；元素 ID、动画锚点、画幅布局与资源依赖 | TTS、修改事实或导出最终有声视频 |
+| codoop-video | 标准制作包，或场景包 + 音频 + 字幕/时间映射 | 解析后的 timeline.json、预览和完整 MP4、渲染检查；输出配置和输入版本 | 自动研究、写稿、生图或替换已确认内容 |
+| codoop-produce | 话题或任意已有中间产物，以及目标成品 | 调用已实现 skills，保存项目索引和执行计划，交付制作包及视频 | 重复实现其他 skill 的业务逻辑 |
 
 这里的 scenes 是画面制作，video 是时间绑定与合成导出；assets 可处理一张图，也可以复用本地素材，不强制调用生图。Agent 生图依宿主工具可用性，来源与联网状态必须记录，不能将其宣称为本地能力。
 

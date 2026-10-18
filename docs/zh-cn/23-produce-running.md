@@ -2,7 +2,7 @@
 
 [English](../en/23-produce-running.md) | [简体中文](23-produce-running.md)
 
-2026-10-17：新增 codoop-cast-produce。用户在内容项目目录里提出目标，由宿主 Agent 调用各独立 skill，复用已确认产物，继续缺少或受影响的环节。没有新增在线服务、后台任务调度器或模型。
+2026-10-17：新增 codoop-produce。用户在内容项目目录里提出目标，由宿主 Agent 调用各独立 skill，复用已确认产物，继续缺少或受影响的环节。没有新增在线服务、后台任务调度器或模型。
 
 ## 分工
 

@@ -2,7 +2,7 @@
 
 [English](../en/20-project-layout.md) | [简体中文](20-project-layout.md)
 
-状态：2026-10-17，项目格式 0.1.0。新建内容项目使用本规范；原有独立制作包继续作为输入，不自动移动用户文件。七个已实现 skill 共用这套规则，安装包内的执行细节见 skills/codoop-cast-setup/references/project-layout.md。
+状态：2026-10-17，项目格式 0.1.0。新建内容项目使用本规范；原有独立制作包继续作为输入，不自动移动用户文件。七个已实现 skill 共用这套规则，安装包内的执行细节见 skills/codoop-setup/references/project-layout.md。
 
 ## 目录结构
 

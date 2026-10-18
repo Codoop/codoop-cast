@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codoop Assets"
+  short_description: "Prepare and reuse video assets automatically"
+  default_prompt: "Use $codoop-assets to prepare the visuals this video needs and manage their local files for me."

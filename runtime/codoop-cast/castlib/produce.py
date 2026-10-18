@@ -8,7 +8,7 @@ from .project import checked_record, inspect_project, locate, next_path, select
 
 GRAPH = {'research': [], 'script': ['research'], 'storyboard': ['script'], 'voice': ['script'],
          'subtitles': ['voice'], 'assets': ['storyboard'], 'scenes': ['storyboard', 'assets'], 'exports': ['subtitles', 'scenes']}
-SKILLS = {stage: 'codoop-cast-'+{'exports':'video','voice':'voice'}.get(stage,stage) for stage in GRAPH}
+SKILLS = {stage: 'codoop-'+{'exports':'video','voice':'voice'}.get(stage,stage) for stage in GRAPH}
 
 
 def require(value, message):
@@ -126,7 +126,7 @@ def status(directory, run_id):
     available = []
     for step in record['steps']:
         if entries[step['stage']]['state'] not in ('reused','succeeded','running') and all(entries[p]['state'] in ('reused','succeeded') for p in step['dependencies']):
-            available.append(dict(stage=step['stage'],action=step['action'],skill=step['skill']))
+            available.append(dict(stage=step['stage'],action=step['action'],skill=SKILLS.get(step['stage'], step['skill'])))
     return dict(status='ready',run_id=run_id,workflow_state=phase,output_language=record.get('output_language'),target=record['target'],project=str(root),
                 plan=str(folder/'plan.json'),state=str(folder/'state.json'),steps=entries,
                 next_steps=available if not changes else [],changed_inputs=changes,

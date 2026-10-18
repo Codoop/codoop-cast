@@ -4,7 +4,7 @@
 
 > 状态说明：本文保留对应开发阶段的计划或验证记录。当前已实现能力与发布缺口以 [Alpha 发布状态](29-release-readiness.md) 为准；首次使用见 [安装指南](28-install-and-first-video.md)。
 
-2026-10-17：新增 codoop-cast-script，独立接收标准调研报告或用户的 UTF-8 Markdown/纯文本报告，由 Agent 写稿，复用本地 authoring 环境进行校验与导出。不要求先调用调研，不安装声音模型，也没有新增 HTTP 服务。
+2026-10-17：新增 codoop-script，独立接收标准调研报告或用户的 UTF-8 Markdown/纯文本报告，由 Agent 写稿，复用本地 authoring 环境进行校验与导出。不要求先调用调研，不安装声音模型，也没有新增 HTTP 服务。
 
 ## 用户行为
 

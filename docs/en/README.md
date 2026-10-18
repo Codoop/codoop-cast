@@ -42,6 +42,8 @@ User and maintainer documents are paired across en and zh-cn. Skill instructions
 - [Voice and speech module](modules/voice.md)
 - [codoop-cast v0.1.0-alpha.1](releases/v0.1.0-alpha.1.md)
 
+- [Skill naming](30-skill-naming.md)
+
 ## Maintenance
 
 Update both editions in the same change, preserving commands, IDs, hashes, dates and verification limits. Do not translate LICENSE/NOTICE, schema keys or fixed artifact filenames. Evidence fixtures remain canonical and receive separate English reading editions rather than changed hash-pinned source text. Validate with `python scripts/check_docs.py` from the repository root.

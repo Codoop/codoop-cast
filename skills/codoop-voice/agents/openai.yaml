@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codoop Voice"
+  short_description: "Clone a reference voice and generate local narration"
+  default_prompt: "Use $codoop-voice to narrate this script using my reference voice."

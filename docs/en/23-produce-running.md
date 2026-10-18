@@ -2,7 +2,7 @@
 
 [English](23-produce-running.md) | [简体中文](../zh-cn/23-produce-running.md)
 
-Added 2026-10-17: `codoop-cast-produce`. In a content directory the user states a goal; the host invokes independent skills, reusing accepted artifacts and continuing missing/affected stages. No new web service, scheduler or model.
+Added 2026-10-17: `codoop-produce`. In a content directory the user states a goal; the host invokes independent skills, reusing accepted artifacts and continuing missing/affected stages. No new web service, scheduler or model.
 
 ## Responsibilities
 

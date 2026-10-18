@@ -42,6 +42,8 @@
 - [声音与配音模块](modules/voice.md)
 - [codoop-cast v0.1.0-alpha.1](releases/v0.1.0-alpha.1.md)
 
+- [Skill 命名规范](30-skill-naming.md)
+
 ## 维护约定
 
 同一次修改同步更新两个语言版本；保持命令、ID、哈希、日期和验证边界一致。LICENSE/NOTICE、schema 键和固定产物文件名不翻译。证据样例保留原件，英文只作单独阅读对照，不更改已固定哈希的来源正文。在仓库根目录运行 `python scripts/check_docs.py` 检查。

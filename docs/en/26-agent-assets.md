@@ -2,7 +2,7 @@
 
 [English](26-agent-assets.md) | [简体中文](../zh-cn/26-agent-assets.md)
 
-Users describe a video/visual without managing directories, manifests, prompts or file copies. `codoop-cast-assets` is automatically invoked and also supports standalone collections.
+Users describe a video/visual without managing directories, manifests, prompts or file copies. `codoop-assets` is automatically invoked and also supports standalone collections.
 
 ## Selection/preparation
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codoop Video"
+  short_description: "Export synchronized local topic videos"
+  default_prompt: "Use $codoop-video for this video task."

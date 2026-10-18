@@ -22,12 +22,12 @@ The early table below was later expanded by the [handoff contracts](13-skill-con
 
 | Planned name | Intent | Necessary input |
 | --- | --- | --- |
-| codoop-cast-setup | Shared checks, initialization, configuration, repair | Feature/data drive if needed |
-| codoop-cast-voice | Save profiles, synthesize, retry | Initial reference/text and narration |
-| codoop-cast-research | Research/report | Topic or supplied sources |
-| codoop-cast-script | Report to narration | Report; initial duration default proposal |
-| codoop-cast-video | Make video | Script or existing production artifacts |
-| codoop-cast-produce | Coordinate implemented capabilities | Topic or intermediate outputs |
+| codoop-setup | Shared checks, initialization, configuration, repair | Feature/data drive if needed |
+| codoop-voice | Save profiles, synthesize, retry | Initial reference/text and narration |
+| codoop-research | Research/report | Topic or supplied sources |
+| codoop-script | Report to narration | Report; initial duration default proposal |
+| codoop-video | Make video | Script or existing production artifacts |
+| codoop-produce | Coordinate implemented capabilities | Topic or intermediate outputs |
 
 Initially deliver setup/voice only; release other skills with working modules, not placeholders. Subtitles are explicitly independent and accept external audio/script; the newer contracts define their boundaries.
 
@@ -41,8 +41,8 @@ Names/descriptions drive accurate discovery. SKILL.md holds essential flow/const
 codoop-cast/
   <Codex / Claude Code / Cursor manifests>
   skills/
-    codoop-cast-setup/SKILL.md
-    codoop-cast-voice/SKILL.md
+    codoop-setup/SKILL.md
+    codoop-voice/SKILL.md
   scripts/                    # local entry/bootstrap
   runtime/codoop-cast/         # shared CLI/modules/adapters
   docs/                       # maintainer documentation

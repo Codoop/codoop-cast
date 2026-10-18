@@ -10,9 +10,9 @@ On 2026-10-17 the validated HTML prototype became three independent skills with 
 
 | Skill | Independent input | Delivery |
 | --- | --- | --- |
-| codoop-cast-storyboard | Narration text/script.json | Standard plan, semantic anchors, review and index |
-| codoop-cast-scenes | Storyboard package | Topic-specific HTML/manifest/check screenshots |
-| codoop-cast-video | Plan, scenes, real audio/alignment | Actual timeline, editable package, MP4 |
+| codoop-storyboard | Narration text/script.json | Standard plan, semantic anchors, review and index |
+| codoop-scenes | Storyboard package | Topic-specific HTML/manifest/check screenshots |
+| codoop-video | Plan, scenes, real audio/alignment | Actual timeline, editable package, MP4 |
 
 Users describe intent; the agent reads skills, authors and calls local tools. Planning/design is agent work, not a fixed ten-page algorithm. Prepare imports text and canonical files; an empty folder is not a generated storyboard. No HTTP service.
 

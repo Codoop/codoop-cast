@@ -8,7 +8,7 @@ Baseline on 2026-10-17: no aligner installed/validated. Validate before pinning 
 
 ## Experience and scope
 
-The proposed independent `codoop-cast-subtitles` accepts “caption the previous narration” or local audio/transcript. Prepare dependencies, align, split and export SRT without model selection, timecodes or manual segmentation.
+The proposed independent `codoop-subtitles` accepts “caption the previous narration” or local audio/transcript. Prepare dependencies, align, split and export SRT without model selection, timecodes or manual segmentation.
 
 Start with known-script, single-speaker Chinese narration, numbers and some English. Audio without a transcript has missing input; arbitrary transcription is not mandatory here. No HTTP, training, diarization, translation, karaoke highlighting or ASS editor.
 

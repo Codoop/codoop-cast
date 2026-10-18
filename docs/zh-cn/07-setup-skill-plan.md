@@ -2,7 +2,7 @@
 
 [English](../en/07-setup-skill-plan.md) | [简体中文](07-setup-skill-plan.md)
 
-状态：已实现统一 doctor、功能注册与 voice 初始化的 alpha 版本；其他功能尚未注册，配置迁移和资源清理尚未实现。以下保留整体设计目标。`codoop-cast-setup` 是整个插件的初始化与配置入口，不是 GPT-SoVITS 专用安装器，也不是通用系统管理工具。
+状态：已实现统一 doctor、功能注册与 voice 初始化的 alpha 版本；其他功能尚未注册，配置迁移和资源清理尚未实现。以下保留整体设计目标。`codoop-setup` 是整个插件的初始化与配置入口，不是 GPT-SoVITS 专用安装器，也不是通用系统管理工具。
 
 ## 职责
 

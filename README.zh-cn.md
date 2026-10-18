@@ -69,3 +69,5 @@
 素材由 Agent 根据分镜自动准备、复用和记录来源，无需用户管理清单。支持已有文件、本地代码图示及宿主可用的生图能力；替换素材仅影响画面和导出。详见 [Agent 素材管理](docs/zh-cn/26-agent-assets.md)。模型、工具和声音档案位于独立共享数据根，视频素材和成片保存在内容项目。
 
 共享运行目录的固定结构、命名、持久数据与缓存边界见 [共享数据目录规范](docs/zh-cn/27-shared-data-layout.md)。setup 按需建立目录并兼容已有数据，doctor 提供只读布局检查。
+
+公开 skill 采用 `codoop-*`，例如 `codoop-setup`、`codoop-research`、`codoop-voice`、`codoop-produce`，与 codoop-flow 的入口风格一致。见[命名与升级兼容](docs/zh-cn/30-skill-naming.md)。

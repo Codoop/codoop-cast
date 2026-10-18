@@ -4,7 +4,7 @@
 
 > Historical implementation record. Current state: [readiness](29-release-readiness.md); first use: [installation](28-install-and-first-video.md).
 
-On 2026-10-17 `codoop-cast-script` gained independent standard-report or UTF-8 Markdown/text input. The agent writes, and private authoring validates/exports. Research invocation, voice models and HTTP are unnecessary.
+On 2026-10-17 `codoop-script` gained independent standard-report or UTF-8 Markdown/text input. The agent writes, and private authoring validates/exports. Research invocation, voice models and HTTP are unnecessary.
 
 ## User requests
 

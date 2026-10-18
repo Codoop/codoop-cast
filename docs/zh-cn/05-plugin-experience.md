@@ -22,12 +22,12 @@
 
 | 计划名称 | 用户意图 | 必要输入 |
 | --- | --- | --- |
-| codoop-cast-setup | 为本插件各功能统一检查、初始化、配置与修复 | 必要时指定功能或数据盘 |
-| codoop-cast-voice | 保存声音档案、克隆配音、重做 | 首次参考音频和文字、朗读稿 |
-| codoop-cast-research | 调研话题并生成报告 | 话题或用户资料 |
-| codoop-cast-script | 将报告写成口播稿 | 报告，目标时长有默认值 |
-| codoop-cast-video | 制作视频 | 稿件或已有制作产物 |
-| codoop-cast-produce | 串联已实现能力 | 话题或已有中间产物 |
+| codoop-setup | 为本插件各功能统一检查、初始化、配置与修复 | 必要时指定功能或数据盘 |
+| codoop-voice | 保存声音档案、克隆配音、重做 | 首次参考音频和文字、朗读稿 |
+| codoop-research | 调研话题并生成报告 | 话题或用户资料 |
+| codoop-script | 将报告写成口播稿 | 报告，目标时长有默认值 |
+| codoop-video | 制作视频 | 稿件或已有制作产物 |
+| codoop-produce | 串联已实现能力 | 话题或已有中间产物 |
 
 首批只交付 setup 与 voice，其余随模块完成再发布，不创建无法执行的占位入口。字幕已确定作为独立 skill，支持导入音频与稿件；具体边界以新交接契约为准。
 
@@ -41,8 +41,8 @@ setup 是插件级公共能力，按功能注册初始化项，首批仅实现 v
 codoop-cast/
   <Codex / Claude Code / Cursor 插件清单>
   skills/
-    codoop-cast-setup/SKILL.md
-    codoop-cast-voice/SKILL.md
+    codoop-setup/SKILL.md
+    codoop-voice/SKILL.md
   scripts/                  # 本地命令入口与环境引导
   runtime/codoop-cast/       # 共享 CLI、能力及模型适配器
   docs/                     # 维护者文档

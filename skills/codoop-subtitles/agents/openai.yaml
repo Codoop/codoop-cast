@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codoop Subtitles"
+  short_description: "Create local subtitles aligned to narration audio"
+  default_prompt: "Use $codoop-subtitles to create synchronized subtitles for this narration."

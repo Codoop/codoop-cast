@@ -21,7 +21,7 @@ These are agent execution commands, not mandatory manual steps. Without Python, 
 
 Default storage: `%LOCALAPPDATA%/codoop-cast`. Use the same `CODOOP_CAST_HOME` for every child command to select another drive; this does not migrate existing data. The historical initial download estimate was approximately 2.3GB of models including recognition, plus CUDA PyTorch/dependencies/extraction/cache. Actual manifests and disk checks govern.
 
-Arguments/rules: [voice execution reference](../../skills/codoop-cast-voice/references/execution.md).
+Arguments/rules: [voice execution reference](../../skills/codoop-voice/references/execution.md).
 
 ## Distribution
 

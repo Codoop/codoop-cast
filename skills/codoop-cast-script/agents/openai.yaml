@@ -1,4 +1,0 @@
-interface:
-  display_name: "Codoop Cast Script"
-  short_description: "Write natural narration with traceable report claims"
-  default_prompt: "Use $codoop-cast-script to turn this report into a clear spoken narration while preserving facts and qualifications."

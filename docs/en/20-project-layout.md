@@ -2,7 +2,7 @@
 
 [English](20-project-layout.md) | [简体中文](../zh-cn/20-project-layout.md)
 
-Project format 0.1.0, introduced 2026-10-17. Apply to new projects; existing standalone packages remain imports without automatic moves. Seven skills shared it at that historical milestone. Installed execution guidance: `skills/codoop-cast-setup/references/project-layout.md`.
+Project format 0.1.0, introduced 2026-10-17. Apply to new projects; existing standalone packages remain imports without automatic moves. Seven skills shared it at that historical milestone. Installed execution guidance: `skills/codoop-setup/references/project-layout.md`.
 
 ## Structure
 

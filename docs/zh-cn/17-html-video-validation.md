@@ -39,7 +39,7 @@ scripts/make_video_demo.py 是此演示话题的编辑脚本，不是通用的�
 
 两种画幅均为 72 秒、2160 帧：1080×1920 与 1920×1080。每个分镜抽取代表帧，检查正文/字幕不越界及不与头像重叠。全片解码、音视频时长、颜色和流参数在最终导出后核查。
 
-最终交付：codoop-cast-portrait-final.mp4（3,572,504 字节）、codoop-cast-landscape-v3.mp4（3,315,849 字节）。两者全片解码通过，H.264/AAC、30fps、72 秒、limited-range yuv420p；两份可编辑制作包合并为 codoop-cast-video-projects.zip。抽查编码后画面，修正横屏标题将“画面”拆行的问题，并在样例 inspect 中加入标题意外换行检查。
+最终交付：codoop-cast-portrait-final.mp4（3,572,504 字节）、codoop-cast-landscape-v3.mp4（3,315,849 字节）。两者全片解码通过，H.264/AAC、30fps、72 秒、limited-range yuv420p；两份可编辑制作包合并为 codoop-video-projects.zip。抽查编码后画面，修正横屏标题将“画面”拆行的问题，并在样例 inspect 中加入标题意外换行检查。
 
 重复定位检查同时比较可见 DOM 与画面。Chromium 图层重建可能引入低幅抗锯齿差异：允许每通道最大差值不超过 3、全图平均绝对差不超过 0.1，并要求可见 DOM 完全一致；不以像素差异检测代替时间轴验证，也不声称所有浏览器或机器字节级复现。报告记录原始差异指标。
 

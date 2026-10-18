@@ -38,8 +38,8 @@ Alignment/video are separate modules. Post-generation ASR quality checks need se
 
 | Skill | Responsibility | Example request |
 | --- | --- | --- |
-| `codoop-cast-voice` | Store/reuse voices, synthesize, retry passages | “Read this with this voice”; “use the previous voice”; “redo paragraph two” |
-| `codoop-cast-setup` | Shared environment checks, initialization, configuration and bounded repair | “Initialize”; “check speech dependencies”; “change the cache location” |
+| `codoop-voice` | Store/reuse voices, synthesize, retry passages | “Read this with this voice”; “use the previous voice”; “redo paragraph two” |
+| `codoop-setup` | Shared environment checks, initialization, configuration and bounded repair | “Initialize”; “check speech dependencies”; “change the cache location” |
 
 Voice descriptions must not attract research/writing/video work. Setup is not general system maintenance. Keep SKILL.md short, conditional error/parameter details in references, and deterministic operations in scripts.
 

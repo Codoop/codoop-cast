@@ -2,7 +2,7 @@
 
 [English](../en/16-subtitles-running.md) | [简体中文](16-subtitles-running.md)
 
-2026-10-17：已实现 codoop-cast-subtitles、alignment 通用 setup 注册和本地 CLI；Windows + NVIDIA 本机 alpha 验证通过。未发布，不声称原生 Agent 安装或所有语言/硬件已经验证。
+2026-10-17：已实现 codoop-subtitles、alignment 通用 setup 注册和本地 CLI；Windows + NVIDIA 本机 alpha 验证通过。未发布，不声称原生 Agent 安装或所有语言/硬件已经验证。
 
 ## 用户入口
 

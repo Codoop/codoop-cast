@@ -67,3 +67,5 @@ Skill instructions are English, while setup's output_language controls deliverab
 The agent prepares/reuses media and tracks origin without manual manifests. Inputs can be existing files, local diagrams or available host image generation. Asset replacement affects visuals/export only: [asset management](docs/en/26-agent-assets.md).
 
 Models/tools/profiles use private shared storage; content assets/videos stay in projects. [Shared data layout](docs/en/27-shared-data-layout.md) specifies naming, persistence/cache boundaries and versioning. Setup creates needed categories compatibly; doctor inspects them read-only.
+
+Public skills use `codoop-*` entry names, including `codoop-setup`, `codoop-research`, `codoop-voice` and `codoop-produce`. See [naming and upgrade compatibility](docs/en/30-skill-naming.md).
